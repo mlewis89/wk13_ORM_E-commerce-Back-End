@@ -45,8 +45,33 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
+  try {
+    const tagData =  await Tag.update(
+      {
+        // All the fields you can update and the data attached to the request body.
+        tag_name: req.body.tag_name
+      },
+      {
+        // Gets a book based on the book_id given in the request parameters
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    if(!tagData)
+    {
+      res.status(404).json({message: 'no tag found for that id'});
+      return;
+    }
+    res.status(200).json(tagData);
+
+    
+  } catch (error) {
+    res.status(500).json(err);
+    
+  }
 });
 
 router.delete('/:id', async (req, res) => {
