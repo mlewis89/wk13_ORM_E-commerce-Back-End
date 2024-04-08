@@ -1,16 +1,16 @@
 
 
-# Bootcamp Challenge Week Twelve - MYSQL: Employee Tracker
+# Bootcamp Challenge Week Thirteen - Object-Relational Mapping (ORM): E-commerce Back End
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Description
 
-The purpose of this application is to test my knowledge of MYSQL and Node-j, by producing a simple command line application to as a basic employeer tracker.
+The purpose of this application is to test my knowledge of the Sequelise npm module to create a MYSQL database to provide the backend API for an e-commerce store.
 
-This application makes it easy for the user to add, veiw and delete employees, roles and departments withing their company.
+This application allows for GET, UPDATE, CREATE and DELETE intergrations to the database.
 
-During this project I learnt how to make SQL queiries to a MYSYL database. and some more advanced functions within the inquirer package.
+During this project I learnt how to make use of the Sequelise Module to create mySQL data models and then apply queiries to a MYSYL database. 
 
 ## Table of Contents
     
@@ -27,48 +27,41 @@ During this project I learnt how to make SQL queiries to a MYSYL database. and s
 ## User Story
 
 ```
-AS A business owner
-I WANT to be able to view and manage the departments, roles, and employees in my company
-SO THAT I can organize and plan my business
+AS A manager at an internet retail company
+I WANT a back end for my e-commerce website that uses the latest technologies
+SO THAT my company can compete with other e-commerce companies
 ```
 
 ## Acceptance Criteria
 
 ```
-GIVEN a command-line application that accepts user input
-WHEN I start the application
-THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
-WHEN I choose to view all departments
-THEN I am presented with a formatted table showing department names and department ids
-WHEN I choose to view all roles
-THEN I am presented with the job title, role id, the department that role belongs to, and the salary for that role
-WHEN I choose to view all employees
-THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
-WHEN I choose to add a department
-THEN I am prompted to enter the name of the department and that department is added to the database
-WHEN I choose to add a role
-THEN I am prompted to enter the name, salary, and department for the role and that role is added to the database
-WHEN I choose to add an employee
-THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
-WHEN I choose to update an employee role
-THEN I am prompted to select an employee to update and their new role and this information is updated in the database
-```
-## Bonus
-add some additional functionality to your application, such as the ability to do the following:
-
-```
-Update employee managers.
-View employees by manager.
-View employees by department.
-Delete departments, roles, and employees.
-View the total utilized budget of a department—in other words, the combined salaries of all employees in that department.
+GIVEN a functional Express.js API
+WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
+THEN I am able to connect to a database using Sequelize
+WHEN I enter schema and seed commands
+THEN a development database is created and is seeded with test data
+WHEN I enter the command to invoke the application
+THEN my server is started and the Sequelize models are synced to the MySQL database
+WHEN I open API GET routes in Insomnia Core for categories, products, or tags
+THEN the data for each of these routes is displayed in a formatted JSON
+WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
+THEN I am able to successfully create, update, and delete data in my database
 ```
 
 ## Installation
 
-Clone the repo to a local folder and then from the terminal inside the main directory, run the following command to install the necessary dependancies.
+Clone the repo to a local folder and open a MYSQL instance within the 'Develop' foler and run the following command.
+    SOURCE db/schema.sql;
+
+exit mysql.
+
+then from the terminal inside the 'Develop' directory, run the following command to install the necessary dependancies.
        
-    npm install -y
+    npm i
+
+Seed the database with the sample code.
+       
+    npm run seed
 
 ## Testing
 
@@ -76,25 +69,20 @@ No self tests exist for this application
 
 ## Usage
     
-Open the terminal in the Root Folder and enter the following command.
+Open the terminal in the 'Develop' Folder and enter the following command.
 
     npm run start
 
-Then navigate to the link provided in the command line. 
+Then use insomnia to communicate with the API interface. 
 
 
 ## GitHub repository
-https://github.com/mlewis89/wk12_MYSQL_Employee-Tracker
+https://github.com/mlewis89/wk13_ORM_E-commerce-Back-End
 
 
 ## Screenshots / Video of Completed Challenge
-
-![completed application](/assets/Capture1.PNG)
-![completed application](/assets/Capture2.PNG)
-![completed application](/assets/Capture3.PNG)
-
-[Click here to view a video of the application in use](./assets/completedApplication_video.webm)
-[google drive link to video](https://drive.google.com/file/d/1eLzEZ9BzxVV-tYIPCIqyJLsWLOhuGEE3/view)
+[Click here to view a video of the application in use](./assets/CodeExample.webm)
+[google drive link to video](https://drive.google.com/file/d/1bl9MdOzQdQstMaTZAwA3KpLw3xlCQIqT/view)
 
 ## License
 This project is licensed under the MIT.
