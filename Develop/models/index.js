@@ -32,6 +32,7 @@ Tag.belongsToMany(Product, {
     model: ProductTag,
     unique: false
   },
+  sourceKey: 'id',
   foreignKey: 'tag_id',
   onDelete: 'CASCADE',
 })
